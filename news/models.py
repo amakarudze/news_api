@@ -8,9 +8,9 @@ class Article(models.Model):
     body = models.TextField()
     location = models.CharField(max_length=120)
     publication_date = models.DateTimeField()
-    active = models.BooleanField()
+    active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.author} {self.title}'
+        return f'{self.author}: {self.title}'
