@@ -15,7 +15,6 @@ class ArticleSerializer(serializers.Serializer):
     updated_at = serializers.DateTimeField(read_only=True)
 
     def create(self, validated_data):
-        print(validated_data)
         return Article.objects.create(**validated_data)
 
     def update(self, instance, validated_data):
